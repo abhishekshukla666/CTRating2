@@ -17,6 +17,6 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "CTRating2",
-            resources: [.process("CTRating2Assests.xcassets")])
+            resources: [.process("CTRating2Images.xcassets")])
     ]
 )

@@ -13,22 +13,27 @@ public struct StaticRatingsView: View {
     /// - Parameters:
     /// - value: The decimal value for rating view
     /// - foregroundColor: The foreground color for the rating view
-    let value: Double
-    var foregroundColor = Color.yellow
+    let ratingValue: Double
+    let foregroundColor: Color
+    
+    public init(ratingValue: Double, foregroundColor: Color = .yellow) {
+        self.ratingValue = ratingValue
+        self.foregroundColor = foregroundColor
+    }
 
     public var body: some View {
         HStack(spacing: 0) {
             ForEach(0..<5) { index in
-                Image(systemName: imageName(for: index, value: value))
+                Image(systemName: imageName(for: index, ratingValue: ratingValue))
                     .foregroundColor(foregroundColor)
             }
         }
     }
     
-    func imageName(for starIndex: Int, value: Double) -> String {
-        if value >= Double(starIndex + 1) {
+    func imageName(for starIndex: Int, ratingValue: Double) -> String {
+        if ratingValue >= Double(starIndex + 1) {
             return "star.fill"
-        } else if value >= Double(starIndex) + 0.5 {
+        } else if ratingValue >= Double(starIndex) + 0.5 {
             return "star.leadinghalf.filled"
         } else {
             return "star"
@@ -38,5 +43,5 @@ public struct StaticRatingsView: View {
 }
 
 #Preview {
-    StaticRatingsView(value: 3.5, foregroundColor: .yellow)
+    StaticRatingsView(ratingValue: 3.5, foregroundColor: .yellow)
 }
