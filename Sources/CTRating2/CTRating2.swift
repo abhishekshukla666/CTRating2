@@ -2,6 +2,18 @@
 // https://docs.swift.org/swift-book
 import SwiftUI
 
+/// A view of inline images that represents a rating.
+/// Tapping on an image will change it from an unfilled to a filled version of the image.
+///
+/// The following example shows a CTRating view with a maximum rating of 10 red flags, each with a width of 20:
+///
+///     CTRating2(maxRating: 10,
+///              currentRating: $currentRating,
+///              width: 20,
+///              color: .red,
+///              ratingImage: .flag)
+///
+///
 public struct CTRating2: View {
     
     var maxRating: Int
