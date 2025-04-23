@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum RatingImage: String {
+public enum RatingImage: String {
     // These represent SFSymbols.  The string after the SF_ suffix is the name of the SFSymbol.  There must also be a corresponding .fill suffix.
     case star = "SF_star"
     case heart = "SF_heart"

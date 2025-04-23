@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 import SwiftUI
 
-struct CTRating2: View {
+public struct CTRating2: View {
     
     var maxRating: Int
     @Binding var currentRating: Int
@@ -18,7 +18,7 @@ struct CTRating2: View {
         self.ratingImage = ratingImage
     }
     
-    var body: some View {
+    public var body: some View {
         HStack {
             ForEach(0..<maxRating) { rating in
                 correctImage(for: rating)
