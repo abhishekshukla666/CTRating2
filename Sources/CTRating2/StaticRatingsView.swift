@@ -49,5 +49,5 @@ public struct StaticRatingsView: View {
 }
 
 #Preview {
-    StaticRatingsView(ratingValue: 3.5, foregroundColor: .yellow)
+    StaticRatingsView(ratingValue: 3.5, foregroundColor: .yellow, width: 100)
 }
