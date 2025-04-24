@@ -38,7 +38,6 @@ public struct StaticRatingsView: View {
         } else {
             return "star"
         }
-        
     }
 }
 
