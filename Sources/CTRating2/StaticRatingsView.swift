@@ -13,21 +13,28 @@ public struct StaticRatingsView: View {
     /// - Parameters:
     /// - value: The decimal value for rating view
     /// - foregroundColor: The foreground color for the rating view
+    /// - width: The width of the rating stars
     let ratingValue: Double
     let foregroundColor: Color
+    let width: CGFloat
     
-    public init(ratingValue: Double, foregroundColor: Color = .yellow) {
+    public init(ratingValue: Double, foregroundColor: Color = .yellow, width: CGFloat = 50) {
         self.ratingValue = ratingValue
         self.foregroundColor = foregroundColor
+        self.width = width
     }
 
     public var body: some View {
-        HStack(spacing: 0) {
+        HStack {
             ForEach(0..<5) { index in
                 Image(systemName: imageName(for: index, ratingValue: ratingValue))
+                    .resizable()
+                    .scaledToFit()
                     .foregroundColor(foregroundColor)
+                    
             }
         }
+        .frame(width: width * ratingValue)
     }
     
     func imageName(for starIndex: Int, ratingValue: Double) -> String {
