@@ -19,6 +19,7 @@ public struct StaticRatingsView: View {
     let foregroundColor: Color
     let width: CGFloat
     let starCount: Int
+    
     public init(ratingValue: Double, foregroundColor: Color = .yellow, width: CGFloat = 15, startCount: Int = 5) {
         self.ratingValue = ratingValue
         self.foregroundColor = foregroundColor
@@ -51,5 +52,5 @@ public struct StaticRatingsView: View {
 }
 
 #Preview {
-    StaticRatingsView(ratingValue: 3.5, foregroundColor: .yellow, width: 100)
+    StaticRatingsView(ratingValue: 4, foregroundColor: .yellow, width: 40, startCount: 10)
 }
