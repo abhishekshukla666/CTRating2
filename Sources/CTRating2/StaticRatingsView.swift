@@ -14,19 +14,21 @@ public struct StaticRatingsView: View {
     /// - value: The decimal value for rating view
     /// - foregroundColor: The foreground color for the rating view
     /// - width: The width of the rating stars
+    /// - Rating start count
     let ratingValue: Double
     let foregroundColor: Color
     let width: CGFloat
-    
-    public init(ratingValue: Double, foregroundColor: Color = .yellow, width: CGFloat = 50) {
+    let starCount: Int
+    public init(ratingValue: Double, foregroundColor: Color = .yellow, width: CGFloat = 15, startCount: Int = 5) {
         self.ratingValue = ratingValue
         self.foregroundColor = foregroundColor
         self.width = width
+        self.starCount = startCount
     }
 
     public var body: some View {
         HStack {
-            ForEach(0..<5) { index in
+            ForEach(0..<starCount, id:\.self) { index in
                 Image(systemName: imageName(for: index, ratingValue: ratingValue))
                     .resizable()
                     .scaledToFit()
