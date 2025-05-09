@@ -37,7 +37,6 @@ public struct StaticRatingsView: View {
                     
             }
         }
-        .frame(width: width * ratingValue)
     }
     
     func imageName(for starIndex: Int, ratingValue: Double) -> String {
@@ -52,5 +51,5 @@ public struct StaticRatingsView: View {
 }
 
 #Preview {
-    StaticRatingsView(ratingValue: 4, foregroundColor: .yellow, width: 40, startCount: 10)
+    StaticRatingsView(ratingValue: 4, foregroundColor: .yellow, width: 50, startCount: 10)
 }
