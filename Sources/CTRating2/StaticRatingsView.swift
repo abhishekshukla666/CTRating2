@@ -22,6 +22,7 @@ public struct StaticRatingsView: View {
     let starCount: Int
     let spacing: CGFloat
     
+    
     public init(ratingValue: Double, foregroundColor: Color = .yellow, width: CGFloat = 15, startCount: Int = 5, spacing: CGFloat = 0) {
         self.ratingValue = ratingValue
         self.foregroundColor = foregroundColor
@@ -44,11 +45,11 @@ public struct StaticRatingsView: View {
     
     func imageName(for starIndex: Int, ratingValue: Double) -> String {
         if ratingValue >= Double(starIndex + 1) {
-            return "star.fill"
+            return "drop.fill"
         } else if ratingValue >= Double(starIndex) + 0.5 {
-            return "star.leadinghalf.filled"
+            return "drop.halffull"
         } else {
-            return "star"
+            return "drop"
         }
     }
 }
