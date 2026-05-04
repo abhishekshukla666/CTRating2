@@ -16,6 +16,7 @@ public struct StaticRatingsView: View {
     /// - width: The width of the rating stars
     /// - Rating start count
     /// - spacing between stars
+    /// 
     let ratingValue: Double
     let foregroundColor: Color
     let width: CGFloat
